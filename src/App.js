@@ -41,7 +41,10 @@ const initialState = {
 export default function ObesityPredictor() {
   const [formData, setFormData] = useState(initialState);
   const [result, setResult] = useState(null);
-
+  const handleChange2 = (e) => {
+    const { name, value, type } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
   const handleChange = (e) => {
     const { name, value, type } = e.target;
 
@@ -101,23 +104,26 @@ export default function ObesityPredictor() {
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700">Do you usually eat vegetables in your meals?</label>
                 <div className="space-y-1">
-                  <RadioOption
-                    name="fcvc0"
+                  <Radio2Option
+                    name="fcvc"
                     label="Never"
                     checked={formData.fcvc === '1'}
-                    onChange={handleChange}
+                    value="1"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="fcvc1"
+                  <Radio2Option
+                    name="fcvc"
                     label="Sometimes"
                     checked={formData.fcvc === '2'}
-                    onChange={handleChange}
+                    value="2"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="fcvc2"
+                  <Radio2Option
+                    name="fcvc"
                     label="Always"
                     checked={formData.fcvc === '3'}
-                    onChange={handleChange}
+                    value="3"
+                    onChange={handleChange2}
                   />
 
                 </div>
@@ -126,29 +132,33 @@ export default function ObesityPredictor() {
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700">How many main meals do you have daily?</label>
                 <div className="space-y-1">
-                  <RadioOption
-                    name="ncp0"
+                  <Radio2Option
+                    name="ncp"
                     label="One"
                     checked={formData.ncp === '1'}
-                    onChange={handleChange}
+                    value="1"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="ncp1"
+                  <Radio2Option
+                    name="ncp"
                     label="Two"
                     checked={formData.ncp === '2'}
-                    onChange={handleChange}
+                    value="2"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="ncp2"
+                  <Radio2Option
+                    name="ncp"
                     label="Three"
                     checked={formData.ncp === '3'}
-                    onChange={handleChange}
+                    value="3"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="ncp3"
+                  <Radio2Option
+                    name="ncp"
                     label="More than three"
                     checked={formData.ncp === '4'}
-                    onChange={handleChange}
+                    value="4"
+                    onChange={handleChange2}
                   />
 
                 </div>
@@ -158,23 +168,26 @@ export default function ObesityPredictor() {
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700">How many main meals do you have daily?</label>
                 <div className="space-y-1">
-                  <RadioOption
-                    name="ch2o0"
+                  <Radio2Option
+                    name="ch2o"
                     label="Less than a liter"
                     checked={formData.ch2o === '0'}
-                    onChange={handleChange}
+                    value="0"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="ch2o1"
+                  <Radio2Option
+                    name="ch2o"
                     label="Between 1 and 2 liter"
                     checked={formData.ch2o === '1'}
-                    onChange={handleChange}
+                    value="1"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="ch2o2"
+                  <Radio2Option
+                    name="ch2o"
                     label="More than 2 liter"
                     checked={formData.ch2o === '2'}
-                    onChange={handleChange}
+                    value="2"
+                    onChange={handleChange2}
                   />
 
                 </div>
@@ -184,29 +197,33 @@ export default function ObesityPredictor() {
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700">How often do you have physical activity?</label>
                 <div className="space-y-1">
-                  <RadioOption
-                    name="faf0"
+                  <Radio2Option
+                    name="faf"
                     label="I don't do"
                     checked={formData.faf === '0'}
-                    onChange={handleChange}
+                    value="0"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="faf1"
+                  <Radio2Option
+                    name="faf"
                     label="1 or 2 times a week"
                     checked={formData.faf === '1'}
-                    onChange={handleChange}
+                    value="1"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="faf2"
+                  <Radio2Option
+                    name="faf"
                     label="2 or 4 times a week"
                     checked={formData.faf === '2'}
-                    onChange={handleChange}
+                    value="2"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="faf3"
+                  <Radio2Option
+                    name="faf"
                     label="More than 4 times a week"
                     checked={formData.faf === '3'}
-                    onChange={handleChange}
+                    value="3"
+                    onChange={handleChange2}
                   />
 
                 </div>
@@ -216,23 +233,26 @@ export default function ObesityPredictor() {
               <div className="space-y-2">
                 <label className="block text-sm font-medium text-gray-700">How much time do you use technological devices such as cell phone, videogames, television, computer and others?</label>
                 <div className="space-y-1">
-                  <RadioOption
-                    name="tue0"
+                  <Radio2Option
+                    name="tue"
                     label="0–2 hours a day"
                     checked={formData.tue === '0'}
-                    onChange={handleChange}
+                    value="0"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="tue1"
+                  <Radio2Option
+                    name="tue"
                     label="3–5 hours a day"
                     checked={formData.tue === '1'}
-                    onChange={handleChange}
+                    value="1"
+                    onChange={handleChange2}
                   />
-                  <RadioOption
-                    name="tue2"
+                  <Radio2Option
+                    name="tue"
                     label="More than 5 hours a day"
                     checked={formData.tue === '2'}
-                    onChange={handleChange}
+                    value="2"
+                    onChange={handleChange2}
                   />
                 </div>
               </div>
@@ -494,6 +514,25 @@ function RadioOption({ name, label, checked, onChange }) {
         id={name}
         name={name}
         value="1"
+        checked={checked}
+        onChange={onChange}
+        className="focus:ring-cyan-500 h-4 w-4 text-cyan-600 border-gray-300"
+      />
+      <label htmlFor={name} className="ml-3 block text-sm font-medium text-gray-700">
+        {label}
+      </label>
+    </div>
+  );
+}
+
+function Radio2Option({ name, label, checked, onChange, value }) {
+  return (
+    <div className="flex items-center">
+      <input
+        type="radio"
+        id={name}
+        name={name}
+        value={value}
         checked={checked}
         onChange={onChange}
         className="focus:ring-cyan-500 h-4 w-4 text-cyan-600 border-gray-300"
